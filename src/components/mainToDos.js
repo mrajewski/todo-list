@@ -4,7 +4,6 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import DoneIcon from '@material-ui/icons/Done';
 import RadioUn from '@material-ui/icons/RadioButtonUnchecked';
 import RadioChe from '@material-ui/icons/RadioButtonChecked';
-import Timer from '@material-ui/icons/Timer';
 
 import Upcoming from './upcoming'
 import Today from './today'
@@ -17,15 +16,15 @@ console.log(dd);
 console.log(mm);
 console.log(yyyy);
 
-const style = {
-    position: 'absolute',
-    width: '500px',
-    margin: '0',
-    top: '50%',
-    marginTop: '-250px',
-    left: '50%',
-    marginLeft: '-250px'
-};
+// const style = {
+//     position: 'absolute',
+//     maxWidth: '500px',
+//     margin: '0',
+//     top: '50%',
+//     marginTop: '-250px',
+//     left: '50%',
+//     marginLeft: '-250px'
+// };
 
 class ToDoMain extends Component {
 
@@ -263,7 +262,9 @@ class ToDoMain extends Component {
         return (
             <>
                 <form onSubmit={this.handleSubmit}
-                      style={this.state.tasks.length <= 0 && this.state.doneList.length <= 0 ? style : null}>
+                      // style={this.state.tasks.length <= 0 && this.state.doneList.length <= 0 ? style : null}
+                className={this.state.tasks.length <= 0 && this.state.doneList.length <= 0 ?'mobile':''}
+                >
                     <h1><p>lets plan something</p></h1>
                     <div className='to-do-input'>
                         <input onChange={this.handleChange} name='name' type="text" autoComplete="off" required
