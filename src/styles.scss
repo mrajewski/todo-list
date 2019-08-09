@@ -1,0 +1,350 @@
+@import "sass/variables.scss";
+@import "switcher.scss";
+
+//$red: rgba(255, 74, 86, 1);
+$red: #173e43;
+//$red: #FAB162;
+
+#particles-js{
+  position: absolute;
+  z-index: -1;
+  width: 98vw;
+  height: 95vh;
+  margin: 0 auto;
+  @media (max-width: 1000px) {
+    display: none;
+
+  }
+}
+
+
+.transition {
+  transition: all 0.25s cubic-bezier(.53, .01, .35, 1.5)
+}
+
+* {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+}
+
+
+html {
+  background-color: $red;
+}
+
+body {
+  position: relative;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    justify-content: center;
+
+  }
+}
+
+form {
+  position: relative;
+  display: inline-block;
+  max-width: 700px;
+  min-width: 500px;
+  padding: 30px 25px;
+  background-color: white;
+  border-radius: 40px;
+  margin: 50px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.75);
+  @media (min-width: 1000px) {
+    width: 450px;
+    min-width: 250px;
+    height: 500px;
+    //flex-grow: 1;
+    //flex-shrink: 0;
+
+
+  }
+  //transform: translate(-50%,0);
+  h1 {
+    color: $red;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    margin-left: 15px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+  }
+
+  button {
+    @extend .transition;
+    margin-top: 35px;
+    background-color: white;
+    border: 1px solid $red;
+    line-height: 0;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 60px;
+    color: $red;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+
+    &:hover, &:focus {
+      color: white;
+      background-color: $red;
+    }
+
+
+  }
+
+  .to-do-input {
+    position: relative;
+    padding: 10px 0;
+
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    label {
+      @extend .transition;
+      transform-origin: left center;
+      color: $red;
+      font-weight: 100;
+      letter-spacing: 0.01em;
+      font-size: 17px;
+      box-sizing: border-box;
+      padding: 10px 15px;
+      display: block;
+      position: absolute;
+      margin-top: -40px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    input {
+      @extend .transition;
+      transition: all 0.25s cubic-bezier(.53, .01, .35, 1.5);
+      appearance: none;
+      //background-color: none;
+      border: 1px solid $red;
+      line-height: 0;
+      font-size: 17px;
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      padding: 10px 15px;
+      border-radius: 60px;
+      color: $red;
+      font-weight: 100;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 1;
+
+
+      &:focus {
+        outline: none;
+        background: $red;
+        color: white;
+        margin-top: 30px;
+      }
+
+      &:valid {
+        margin-top: 30px;
+      }
+
+      &:focus ~ label {
+        transform: translate(0, -35px);
+      }
+
+      &:valid ~ label {
+        text-transform: uppercase;
+        font-style: italic;
+        transform: translate(5px, -35px) scale(0.6)
+      }
+    }
+  }
+}
+
+
+/// Lista
+
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 500px;
+  min-width: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+
+  @media (max-width: 1000px) {
+
+    order: 2;
+    
+  }
+  .list-title{
+    color: $red;
+    font-size: 17px;
+    text-transform: uppercase;
+    background-color: white;
+    width:100%;
+    border-radius: 40px;
+    text-align: center;
+    height: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0 auto 20px auto;
+
+  }
+
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    min-height: 60px;
+    height: 60px;
+    min-width: 500px;
+    color: $red;
+    margin-bottom: 10px;
+    position: relative;
+    letter-spacing: 1px;
+    transition: 0.1s;
+
+
+    &:hover {
+      background-color: darken(white,5%);
+    }
+
+    div {
+
+
+      p {
+        margin: 0 60px;
+
+      }
+
+      p:first-child {
+        font-weight: 800;
+        font-size: 18px;
+        margin-bottom: 2px;
+
+      }
+
+      p:last-child {
+        font-style: italic;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+    }
+
+    p {
+      margin-right: 18px;
+      font-weight: 400;
+    }
+
+    .delete-icon {
+      font-size: 30px !important;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-80%, 55%);
+      transition: 0.3s;
+      color: orange;
+
+      &:hover {
+
+        background-color: #cccccc;
+        border-radius: 10px;
+      }
+    }
+
+    .done-icon {
+      font-size: 30px !important;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-220%, 55%);
+      transition: 0.3s;
+      color: mediumseagreen;
+
+      &:hover {
+
+        background-color: #cccccc;
+        border-radius: 10px;
+      }
+
+    }
+
+    .icon-un{
+      position: absolute;
+      font-size: 30px;
+      left: 10px;
+
+    }
+
+    button {
+      height: 30px;
+      //width: 50px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-30%, -30%);
+      @extend .transition;
+      margin-top: 35px;
+      background-color: white;
+      border: 1px solid $red;
+      line-height: 0;
+      font-size: 17px;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 20px 15px;
+      border-radius: 60px;
+      color: $red;
+      font-weight: 100;
+      letter-spacing: 0.01em;
+
+      &:hover, &:focus {
+        color: white;
+        background-color: $red;
+      }
+
+    }
+  }
+}
+
+.done-list-el{
+  text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Zrób pranie",
+      "place": "Pralnia",
+      "date": "08/05/2019"
+    },
+    {
+      "id": 2,
+      "name": "Ugotuj obiad",
+      "place": "Kuchnia",
+      "date": "08/05/2019"
+    },
+    {
+      "id": 3,
+      "name": "Zrób zakupy",
+      "place": "Lidl",
+      "date": "08/05/2019"
+    }
+  ]
+}
