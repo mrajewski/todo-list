@@ -16,15 +16,7 @@ console.log(dd);
 console.log(mm);
 console.log(yyyy);
 
-// const style = {
-//     position: 'absolute',
-//     maxWidth: '500px',
-//     margin: '0',
-//     top: '50%',
-//     marginTop: '-250px',
-//     left: '50%',
-//     marginLeft: '-250px'
-// };
+
 
 class ToDoMain extends Component {
 
@@ -45,7 +37,7 @@ class ToDoMain extends Component {
         listTitle:'Active'
 
     };
-// Obsluga forma
+// form
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -100,7 +92,7 @@ class ToDoMain extends Component {
 
     };
 
-    //Zmiana z Active do Done
+    //Change Active to Done
 
     handleSwitch = (e) => {
 
@@ -112,7 +104,7 @@ class ToDoMain extends Component {
         }));
     };
 
-    //ZMIANA today upcoming
+    //Switch today/ upcoming
 
     handleToday = e => {
 
@@ -134,7 +126,7 @@ class ToDoMain extends Component {
     };
 
 
-    /// Dodanie tasku do done
+    /// Adding taks to done
     handleDone = (e, id,name) => {
         const today=this.state.today.filter(el => el.name !== name);
         const upcoming=this.state.upcoming.filter(el => el.name !== name);
@@ -173,7 +165,7 @@ class ToDoMain extends Component {
     };
 
 
-    //Usuwanie taska
+    //task delete
     handleDelete = (e, id,name) => {
 
         const today=this.state.today.filter(el => el.name !== name);
@@ -244,7 +236,7 @@ class ToDoMain extends Component {
 
     };
 
-    /// Hoever na element listy
+    /// Hoever on li
     handleEnter = (e, id) => {
         this.setState({
             activeKey: id,
@@ -262,7 +254,6 @@ class ToDoMain extends Component {
         return (
             <>
                 <form onSubmit={this.handleSubmit}
-                      // style={this.state.tasks.length <= 0 && this.state.doneList.length <= 0 ? style : null}
                 className={this.state.tasks.length <= 0 && this.state.doneList.length <= 0 ?'mobile':''}
                 >
                     <h1><p>lets plan something</p></h1>
