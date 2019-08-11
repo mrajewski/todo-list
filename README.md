@@ -1,5 +1,6 @@
-Simple Todo list
+Simple react todo list
 
 React/JS
-HTML/CSS
+CSS
+HTML
 jQuery
