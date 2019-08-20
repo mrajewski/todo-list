@@ -1,8 +1,11 @@
 My own To do list created in React.
 
 -CSS/Sass
+<br>
 -JSX/HTML
+<br>
 -REACT/JS
+<br>
 -RWD
 
 ## Available Scripts
