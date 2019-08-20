@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My own To do list created in React.
+
+-CSS/Sass
+-JSX/HTML
+-REACT/JS
+-RWD
 
 ## Available Scripts
 
