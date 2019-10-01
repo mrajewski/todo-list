@@ -12,9 +12,7 @@ let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = String(today.getFullYear());
-console.log(dd);
-console.log(mm);
-console.log(yyyy);
+
 
 
 
@@ -43,8 +41,6 @@ class ToDoMain extends Component {
             [e.target.name]: e.target.value
 
         });
-        console.log(this.state.today);
-        console.log(this.state.upcoming);
     };
     handleSubmit = (e) => {
         e.preventDefault();
